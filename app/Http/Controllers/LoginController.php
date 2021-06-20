@@ -8,7 +8,7 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return 'Страница входа';
+        return view('login.index');
     }
 
     public function store()

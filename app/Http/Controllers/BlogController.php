@@ -9,12 +9,26 @@ class BlogController extends Controller
 {
     public function index()
     {
-        return 'Посты в блоге';
+        $post = (object) [
+            'id' => 123,
+            'title' => 'Lorem ipsum dolor sit amet.',
+            'content' => 'Lorem ipsum <strong>dolor</strong> sit amet consectetur, adipisicing elit. Soluta, qui?',
+        ];
+
+        $posts = array_fill(0, 10, $post);
+
+        return view('blog.index', compact('posts'));
     }
 
     public function show($post)
     {
-        return 'Один пост в блоге';
+        $post = (object) [
+            'id' => 123,
+            'title' => 'Lorem ipsum dolor sit amet.',
+            'content' => 'Lorem ipsum <strong>dolor</strong> sit amet consectetur, adipisicing elit. Soluta, qui?',
+        ];
+
+        return view('blog.show', compact('post'));
     }
 
     public function like($post)

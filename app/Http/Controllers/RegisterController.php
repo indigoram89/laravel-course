@@ -8,7 +8,7 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        return 'Страница регистрации';
+        return view('register.index');
     }
 
     public function store()
