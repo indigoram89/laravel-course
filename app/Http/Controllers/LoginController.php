@@ -28,12 +28,16 @@ class LoginController extends Controller
 
         // dd($ip, $path, $url);
 
-        $email = $request->input('email');
-        $password = $request->input('password');
-        $remember = $request->boolean('remember');
+        // $email = $request->input('email');
+        // $password = $request->input('password');
+        // $remember = $request->boolean('remember');
 
-        dd($email, $password, $remember);
+        // dd($email, $password, $remember);
 
-        return 'Запрос на вход';
+        if (true) {
+            return redirect()->back()->withInput();
+        }
+
+        return redirect()->route('user');
     }
 }
