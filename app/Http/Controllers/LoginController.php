@@ -8,35 +8,22 @@ class LoginController extends Controller
 {
     public function index(Request $request)
     {
-        // $ip = $request->ip();
-        // $path = $request->path();
-        // $url = $request->url();
-
-        // dd($ip, $path, $url);
-
-        // dd($request->is('log*'));
-        // dd($request->routeIs('log*'));
+        // dd(session()->all());
+        // $foo = session('foo');
+        // dd($foo);
 
         return view('login.index');
     }
 
     public function store(Request $request)
     {
-        // $ip = $request->ip();
-        // $path = $request->path();
-        // $url = $request->url();
+        // authenticate user
 
-        // dd($ip, $path, $url);
+        alert(__('Добро пожаловать!'));
 
-        // $email = $request->input('email');
-        // $password = $request->input('password');
-        // $remember = $request->boolean('remember');
-
-        // dd($email, $password, $remember);
-
-        if (true) {
-            return redirect()->back()->withInput();
-        }
+        // if (true) {
+            // return redirect()->back()->withInput();
+        // }
 
         return redirect()->route('user');
     }
