@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Post\StorePostRequest;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class PostController extends Controller
 {
@@ -27,10 +29,12 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $title = $request->input('title');
-        $content = $request->input('content');
+        $validated = validate($request->all(), [
+            'title' => ['required', 'string', 'max:100'],
+            'content' => ['required', 'string', 'max:10000'],
+        ]);
 
-        // dd($title, $content);
+        dd($validated);
 
         alert(__('Сохранено!'));
 
@@ -61,10 +65,12 @@ class PostController extends Controller
 
     public function update(Request $request, $post)
     {
-        $title = $request->input('title');
-        $content = $request->input('content');
+        $validated = validate($request->all(), [
+            'title' => ['required', 'string', 'max:100'],
+            'content' => ['required', 'string', 'max:10000'],
+        ]);
 
-        // dd($title, $content);
+        dd($validated);
 
         alert(__('Сохранено!'));
 

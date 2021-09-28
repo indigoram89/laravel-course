@@ -20,3 +20,5 @@
     </div>
 </div>
 
+<x-errors />
+
