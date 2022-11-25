@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\Facades\View;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -29,5 +30,7 @@ class AppServiceProvider extends ServiceProvider
         View::composer('user*', function ($view) {
             $view->with('balance', 12345);
         });
+
+        // Model::preventSilentlyDiscardingAttributes(app()->isLocal());
     }
 }
