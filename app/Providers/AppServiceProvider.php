@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
@@ -32,5 +33,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         // Model::preventSilentlyDiscardingAttributes(app()->isLocal());
+
+        Paginator::useBootstrapFive();
     }
 }
