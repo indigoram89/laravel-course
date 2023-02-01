@@ -20,7 +20,7 @@
 
         <div class="col-12 col-md-4">
             <div class="mb-3">
-                <x-input name="tag" value="{{ request('tag') }}" placeholder="{{ __('Тэг') }}" />
+                <x-input name="tag" value="{{ request('tag') }}" placeholder="{{ __('Тег') }}" />
             </div>
         </div>
 
